@@ -2,17 +2,6 @@ import os
 import shutil
 import time
 
-print("""
-                              __ 
-                             / _|
-  _ __ ___ ______ ___   ___ | |_ 
- | '__/ _ \______/ _ \ / _ \|  _|
- | | |  __/     | (_) | (_) | |  
- |_|  \___|      \___/ \___/|_|  
-                                 
-                                 
-""")
-
 # the roblox folder
 robloxfolder = "C:/Users/even/AppData/Local/Roblox/Versions/"
 
