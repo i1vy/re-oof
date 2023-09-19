@@ -5,6 +5,8 @@ import time
 # the roblox folder
 robloxfolder = "C:/Users/even/AppData/Local/Roblox/Versions/"
 
+error = False
+
 print("loading...")
 
 # all installed roblox versions
@@ -32,10 +34,28 @@ for version in versions:
 	# delete old ouch.ogg
 	if os.path.isfile(robloxfolder + version + "/content/sounds/ouch.ogg"):
 		print("    deleting...")
-		os.remove(robloxfolder + version + "/content/sounds/ouch.ogg")
+
+		try:
+			os.remove(robloxfolder + version + "/content/sounds/ouch.ogg")
+		except Exception as e:
+			print("    error deleting: " + str(e))
+			error = True
+			continue
 
 	# copy new ouch.ogg
 	print("    copying...")
-	shutil.copy2("./ouch.ogg", robloxfolder + version + "/content/sounds/ouch.ogg")
+
+	try:
+		shutil.copy2("./ouch.ogg", robloxfolder + version + "/content/sounds/ouch.ogg")
+	except Exception as e:
+		print("    error copying: " + str(e))
+		error = True
+		continue
 
 	print("    patched!")
+
+print()
+
+if error:
+	print("finished with errors")
+	input("press enter to exit")
