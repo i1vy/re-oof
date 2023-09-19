@@ -1,2 +1,2 @@
 # re-oof
-small python script to get the old oof sound back
+small python script to get the old roblox oof sound back
