@@ -9,6 +9,8 @@ error = False
 
 print("loading...")
 
+starttime = time.time()
+
 # all installed roblox versions
 versions = os.listdir(robloxfolder)
 
@@ -57,5 +59,7 @@ for version in versions:
 print()
 
 if error:
-	print("finished with errors")
+	print("finished with errors in" + str(round(time.time() - starttime, 2)) + " seconds")
 	input("press enter to exit")
+else:
+	print("finished in " + str(round(time.time() - starttime, 2)) + " seconds")
