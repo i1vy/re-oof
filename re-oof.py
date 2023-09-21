@@ -9,6 +9,8 @@ error = False
 
 print("loading...")
 
+starttime = time.time()
+
 # all installed roblox versions
 versions = os.listdir(robloxfolder)
 
