@@ -2,6 +2,9 @@ import os
 import shutil
 import time
 
+# set to false to disable the "closing in..." message
+showclosing = True
+
 # the roblox folder
 robloxfolder = "C:/Users/even/AppData/Local/Roblox/Versions/"
 
@@ -62,4 +65,8 @@ print()
 
 if error:
 	print("finished with errors")
-	input("press enter to exit")
+
+if showclosing:
+	for i in range(3):
+		print(f"closing in {3 - i}...")
+		time.sleep(1)
