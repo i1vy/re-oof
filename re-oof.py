@@ -12,12 +12,14 @@ print("loading...")
 # all installed roblox versions
 versions = os.listdir(robloxfolder)
 
-# remove folders without ouch.ogg
+# remove non-folders
 for version in versions:
 	if not version.startswith("version-"):
 		versions.remove(version)
 		continue
-	
+
+# remove folders without ouch.ogg
+for version in versions:
 	if not "content" in os.listdir(robloxfolder + version):
 		versions.remove(version)
 		continue
